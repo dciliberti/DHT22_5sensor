@@ -4,6 +4,13 @@
 % live data during acquisition, the entire data set after the acquisition,
 % and save these data on a spreadsheet.
 %
+% README BEFORE RUN THE FIRST TIME: Please check your port number on line 40. 
+% First acquisition should be without correction. For the first time leave lines 87 to 89 commented. 
+% I have used an external tool to verify temperature and humidity readings and it appeared that 
+% sensor number 5 read both correctly in several condition. 
+% I have written the humCorr.m function to fix the other sensors readings from the value of sensor number 5. 
+% If interested in correction, manipulate humCorr.m function and/or lines 87-89 according to your needs.
+%
 %    Copyright (C) 2018  Danilo Ciliberti dancili@gmail.com
 %
 %    This program is free software: you can redistribute it and/or modify
@@ -77,9 +84,9 @@ while ~stop && t < waitTime
     
     % Humidity correction factor from measurement of sensor 5
     corrData = serialData;
-    for i = 1:4
-       corrData(i) = serialData(i) * humCorr(serialData(5),i);
-    end
+    % for i = 1:4
+    %    corrData(i) = serialData(i) * humCorr(serialData(5),i);
+    % end
     
     disp(corrData)
     
