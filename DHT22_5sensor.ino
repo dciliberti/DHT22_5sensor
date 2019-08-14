@@ -1,5 +1,5 @@
 /*
-    DHT22_5sensor.ino - Arduino code for the readings of temperature and humidity sensors.
+    Arduino sketch to read sensors data and pass them to the computer through the serial port.
     Copyright (C) 2018  Danilo Ciliberti dancili@gmail.com
 
     This program is free software: you can redistribute it and/or modify
